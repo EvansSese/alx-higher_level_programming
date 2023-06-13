@@ -29,12 +29,14 @@ return (prev);
  */
 int is_palindrome(listint_t **head)
 {
+listint_t *slowPtr;
+listint_t *fastPtr;
 if (*head == NULL)
 {
 return (1);
 }
-listint_t *slowPtr = *head;
-listint_t *fastPtr = *head;
+slowPtr = *head;
+fastPtr = *head;
 while (fastPtr != NULL && fastPtr->next != NULL)
 {
 slowPtr = slowPtr->next;
