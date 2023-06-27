@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Define square class and find area"""
 
+
 class Square:
     """define the init method"""
     def __init__(self, size=0):
