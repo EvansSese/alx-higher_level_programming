@@ -17,18 +17,15 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-    
     """define the getter"""
     @property
     def size(self):
         return self.__size
-
-    
     """define the setter"""
     @size.setter
     def size(self, value):
         """this is used to read the size
-        
+
 
         Args:
             value: Value to be used
