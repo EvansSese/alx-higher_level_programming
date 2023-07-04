@@ -5,6 +5,7 @@ Defines a locked class
 
 
 class LockedClass:
+    """ Represents the locked class """
     __slots__ = ["first_name"]
 
     def __setattr__(self, attr, value):
