@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" Defines lookup method """
+
+
 def lookup(obj):
     attributes = []
     methods = []
