@@ -3,6 +3,7 @@
 
 
 def lookup(obj):
+    """ Implememnt lookup function """
     attributes = []
     methods = []
 
