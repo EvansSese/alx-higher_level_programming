@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 """
-Defines the rectangle class
+Defines a rectangle class
 """
-
-
 from models.base import Base
 
 
 class Rectangle(Base):
-    """ represents rectangle """
+    """ represents a rectangle """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
