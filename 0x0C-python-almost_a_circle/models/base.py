@@ -5,7 +5,7 @@ This is the base class for the project
 
 
 import json
-
+import csv
 
 class Base:
     """ Defines the base class """
@@ -61,6 +61,37 @@ class Base:
                 json_data = f.read()
                 obj_list = cls.from_json_string(json_data)
                 instance_list = [cls.create(**obj) for obj in obj_list]
+                return instance_list
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', newline='') as f:
+            writer = csv.writer(f)
+            if cls.__name__ == "Rectangle":
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+            elif cls.__name__ == "Square":
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, 'r') as f:
+                reader = csv.reader(f)
+                instance_list = []
+                if cls.__name__ == "Rectangle":
+                    for row in reader:
+                        id_, width, height, x, y = map(int, row)
+                        instance_list.append(cls(id_, width, height, x, y))
+                elif cls.__name__ == "Square":
+                    for row in reader:
+                        id_, size, x, y = map(int, row)
+                        instance_list.append(cls(id_, size, x, y))
                 return instance_list
         except FileNotFoundError:
             return []
