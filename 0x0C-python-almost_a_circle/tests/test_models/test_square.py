@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ Tests the Square class"""
+
+
 import unittest
 from models.square import Square
 
