@@ -7,6 +7,7 @@ This is the base class for the project
 import json
 import csv
 
+
 class Base:
     """ Defines the base class """
     __nb_objects = 0
@@ -24,7 +25,7 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
-    
+
     @staticmethod
     def from_json_string(json_string):
         if json_string is None or len(json_string) == 0:
@@ -35,7 +36,7 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         filename = cls.__name__ + ".json"
-        json_list =[]
+        json_list = []
         if list_objs is not None:
             json_list = [obj.to_dictionary() for obj in list_objs]
         with open(filename, 'w')as f:
@@ -44,7 +45,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         if cls.__name__ == "Rectangle":
-            dummy = cls(1,1)
+            dummy = cls(1, 1)
         elif cls.__name__ == "Square":
             dummy = cls(1)
         else:
@@ -69,13 +70,13 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         filename = cls.__name__ + ".csv"
         with open(filename, 'w', newline='') as f:
-            writer = csv.writer(f)
+            wrt = csv.writer(f)
             if cls.__name__ == "Rectangle":
                 for obj in list_objs:
-                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                    wrt.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
             elif cls.__name__ == "Square":
                 for obj in list_objs:
-                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+                    wrt.writerow([obj.id, obj.size, obj.x, obj.y])
 
     @classmethod
     def load_from_file_csv(cls):
