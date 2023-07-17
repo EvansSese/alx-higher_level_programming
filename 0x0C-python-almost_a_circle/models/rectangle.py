@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 
+"""
 Defines the rectangle class
 """
 
@@ -9,7 +9,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """ Implements the rectangle class """
-    
+
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
 
@@ -17,12 +17,12 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-    
+
     """ width getter function """
     @property
     def width(self):
         return self.__width
-    
+
     """ width setter function """
     @width.setter
     def width(self, value):
@@ -33,12 +33,12 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
 
         self.__width = value
-    
+
     """ heigth getter function """
     @property
     def height(self):
         return self.__height
-    
+
     """ height setter function """
     @height.setter
     def height(self, value):
@@ -49,12 +49,12 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
 
         self.__height = value
-    
+
     """ x getter function """
     @property
     def x(self):
         return self.__x
-    
+
     """ x setter function """
     @x.setter
     def x(self, value):
@@ -65,12 +65,12 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
 
         self.__x = value
-    
+
     """ y getter function """
     @property
     def y(self):
         return self.__y
-    
+
     """ y setter function """
     @y.setter
     def y(self, value):
@@ -81,11 +81,11 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
 
         self.__y = value
-    
+
     """ area function implementation """
     def area(self):
         return (self.__width * self.__height)
-    
+
     """ display function implementation """
     def display(self):
         for y in range(self.__y):
@@ -96,12 +96,12 @@ class Rectangle(Base):
             for j in range(self.__width):
                 print("#", end='')
             print("")
-    
+
     """ String function definition """
     def __str__(self):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                 self.__x, self.__y, self.__width, self.__height))
-    
+
     """ update function implementation """
     def update(self, *args, **kwargs):
         if args:
@@ -118,7 +118,7 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-    
+
     """ return dictionary function """
     def to_dictionary(self):
         return {
