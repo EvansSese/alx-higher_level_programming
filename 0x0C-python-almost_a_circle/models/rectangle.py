@@ -23,7 +23,7 @@ class Rectangle(Base):
     def width(self, value):
         if not isinstance(value, (int, float)):
             raise TypeError("width must be an integer")
-        
+
         if value <= 0:
             raise ValueError("width must be > 0")
 
@@ -37,7 +37,7 @@ class Rectangle(Base):
     def height(self, value):
         if not isinstance(value, (int, float)):
             raise TypeError("height must be an integer")
-    
+
         if value <= 0:
             raise ValueError("height must be > 0")
 
@@ -51,7 +51,7 @@ class Rectangle(Base):
     def x(self, value):
         if not isinstance(value, (int, float)):
             raise TypeError("x must be an integer")
-        
+
         if value < 0:
             raise ValueError("x must be >= 0")
 
@@ -65,7 +65,7 @@ class Rectangle(Base):
     def y(self, value):
         if not isinstance(value, (int, float)):
             raise TypeError("y must be an integer")
-        
+
         if value < 0:
             raise ValueError("y must be >= 0")
 
@@ -83,8 +83,10 @@ class Rectangle(Base):
             for j in range(self.__width):
                 print("#", end='')
             print("")
+
     def __str__(self):
-        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height))
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                self.__x, self.__y, self.__width, self.__height))
 
     def update(self, *args, **kwargs):
         if args:
