@@ -5,7 +5,7 @@ from models.square import Square
 
 
 class TestSquare(unittest.TestCase):
-    """ Tests square class"""
+
     def test_init_with_arguments(self):
         square = Square(4, 1, 2, 10)
         self.assertEqual(square.size, 4)
