@@ -6,6 +6,7 @@ This is the base class for the project
 
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -32,6 +33,54 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ set up turtle scree """
+        window = turtle.Screen()
+        window.title("Drawing Rectangles and Squares")
+        window.bgcolor("white")
+
+        """Set up the turtle"""
+        pen = turtle.Turtle()
+        pen.speed(0)
+        pen.hideturtle()
+
+        def draw_rectangle(x, y, width, height):
+            """function to draw a rectangle"""
+            pen.penup()
+            pen.goto(x, y)
+            pen.pendown()
+            pen.begin_fill()
+            for _ in range(2):
+                pen.forward(width)
+                pen.left(90)
+                pen.forward(height)
+                pen.left(90)
+            pen.end_fill()
+
+        def draw_square(x, y, size):
+            """function to draw a square"""
+            pen.penup()
+            pen.goto(x, y)
+            pen.pendown()
+            pen.begin_fill()
+            for _ in range(4):
+                pen.forward(size)
+                pen.left(90)
+            pen.end_fill()
+        """Draw rectangles"""
+        for rectangle in list_rectangles:
+            x, y, width, height = rectangle
+            draw_rectangle(x, y, width, height)
+
+        """Draw squares"""
+        for square in list_squares:
+            x, y, size = square
+            draw_square(x, y, size)
+
+        """Close the turtle graphics window on click"""
+        window.exitonclick()
 
     @classmethod
     def save_to_file(cls, list_objs):
