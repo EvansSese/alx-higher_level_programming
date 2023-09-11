@@ -5,5 +5,5 @@ function add (a, b) {
 }
 
 const args = process.argv.slice(2);
-let result = add(args[0], args[1]);
+let result = add(parseInt(args[0]), parseInt(args[1]));
 console.log(result);
