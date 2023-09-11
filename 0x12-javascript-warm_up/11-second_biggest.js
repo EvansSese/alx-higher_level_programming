@@ -8,7 +8,7 @@ if (args.length <= 1) {
   const sortedArgs = args.sort((a, b) => b - a);
   let secondLargest = sortedArgs[1];
 
-  for (let i = 2; i < sortedArgs.length; i++) {
+  for (let i = 1; i < sortedArgs.length; i++) {
     if (sortedArgs[i] !== sortedArgs[0]) {
       secondLargest = sortedArgs[i];
       break;
