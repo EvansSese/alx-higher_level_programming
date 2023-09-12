@@ -6,6 +6,18 @@ class Square extends Rectangle {
   constructor (size) {
     super(size);
   }
+
+  print () {
+    super.print();
+  }
+
+  rotate () {
+    super.rotate();
+  }
+
+  double () {
+    super.double();
+  }
 }
 
 module.exports = Square;
