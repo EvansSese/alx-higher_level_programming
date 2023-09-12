@@ -7,10 +7,11 @@ class Square extends ParentSquare {
     super(size);
   }
 
-  charPrint (c) {
+  charPrint (c = 'X') {
     for (let i = 0; i < this.size; i++) {
       console.log(c.repeat(this.size));
     }
+    console.log('Print');
   }
 }
 
