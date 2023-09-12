@@ -2,7 +2,7 @@
 
 exports.esrever = function (list) {
   const len = list.length;
-  let new_list = list;
+  let new_list = [];
   let i;
 
   if (len > 1) {
