@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
 const fs = require('fs');
-const path = require('path');
 
 if (process.argv.length !== 5) {
   console.error('Usage: node concat-files.js sourceFile1 sourceFile2 destinationFile');
