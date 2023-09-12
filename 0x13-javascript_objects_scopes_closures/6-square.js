@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
-const ParentSquare = require('./5-square');
+const Square = require('./5-square');
 
-class Square extends ParentSquare {
+class ChildSquare extends Square {
   constructor (size) {
-    super(size, size);
+    super(size);
   }
 
   charPrint (c = 'X') {
@@ -15,4 +15,4 @@ class Square extends ParentSquare {
   }
 }
 
-module.exports = Square;
+module.exports = ChildSquare;
