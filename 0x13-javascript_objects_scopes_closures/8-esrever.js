@@ -2,15 +2,15 @@
 
 exports.esrever = function (list) {
   const len = list.length;
-  let new_list = [];
+  const NewList = [];
   let i;
 
   if (len > 1) {
     for (i = 0; i < len; i++) {
-      new_list[i] = list[len - i - 1];
+      NewList[i] = list[len - i - 1];
     }
-    return new_list;
+    return NewList;
   } else {
     return list;
   }
-}
+};
