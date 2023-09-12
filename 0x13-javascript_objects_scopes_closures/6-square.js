@@ -3,8 +3,8 @@
 const ParentSquare = require('./5-square');
 
 class Square extends ParentSquare {
-  constructor () {
-    super(size);
+  constructor (size) {
+    super(size, size);
   }
 
   charPrint (c = 'X') {
