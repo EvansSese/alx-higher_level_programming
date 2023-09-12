@@ -2,7 +2,7 @@
 
 exports.converter = function (base) {
   if (base > 1) {
-    return function convertToBase(num) {
+    return function convertToBase (num) {
       if (num < base) {
         return num.toString(base);
       } else {
