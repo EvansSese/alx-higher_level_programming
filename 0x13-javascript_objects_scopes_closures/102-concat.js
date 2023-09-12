@@ -17,11 +17,7 @@ const concatenateFiles = (file1, file2, destination) => {
     const data2 = fs.readFileSync(file2, 'utf8');
 
     fs.writeFileSync(destination, data1 + data2);
-
-    console.log('Files concatenated successfully!');
-  } catch (err) {
-    console.error('An error occurred:', err.message);
-  }
+  } catch (err) {}
 };
 
 concatenateFiles(sourceFile1, sourceFile2, destinationFile);
