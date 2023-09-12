@@ -11,7 +11,7 @@ class Square extends ParentSquare {
     for (let i = 0; i < this.size; i++) {
       console.log(c.repeat(this.size));
     }
-    console.log(this.size);
+    console.log(size);
   }
 }
 
