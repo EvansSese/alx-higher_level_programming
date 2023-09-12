@@ -19,14 +19,10 @@ class Square extends ParentSquare {
     super.double();
   }
 
-  charPrint (c) {
+  charPrint (c = 'X') {
     if (this.size > 0) {
-      let char = 'C'
-      if (c === undefined) {
-        char = 'X'
-      }
       for (let i = 0; i < this.size; i++) {
-        console.log(char.repeat(this.size));
+        console.log(c.repeat(this.size));
       }
     }
   }
