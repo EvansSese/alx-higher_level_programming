@@ -12,10 +12,9 @@ def find_state(username, password, database_name, state_name):
                              passwd=password,
                              db=database_name)
         cursor = db.cursor()
-        cursor.execute(
-            "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC",
-            (state_name,)
-        )
+        query = ("SELECT * FROM states "
+                 "WHERE name = {} ORDER BY states.id ASC").format(state_name)
+        cursor.execute(query)
         states = cursor.fetchall()
         for state in states:
             print(state)
