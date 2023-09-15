@@ -15,7 +15,8 @@ def list_states_with_n(username, password, database_name):
                              db=database_name)
         cursor = db.cursor()
         cursor.execute(
-            "SELECT * FROM states WHERE name LIKE 'n%' ORDER BY states.id ASC"
+            "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC "
+            "COLLATE utf8mb4_bin"
         )
         states = cursor.fetchall()
         for state in states:
