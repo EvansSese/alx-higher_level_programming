@@ -5,6 +5,7 @@
 import MySQLdb
 import sys
 
+
 def cities_by_state(username, password, database_name):
     """ Function to find cities by state """
     try:
