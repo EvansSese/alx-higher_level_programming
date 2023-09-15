@@ -21,7 +21,8 @@ def filter_cities(username, password, database_name, state_name):
                  "ORDER BY cities.id ASC")
         cursor.execute(query, (state_name,))
         cities = cursor.fetchall()
-        print(cities)
+        city_names = ', '.join(city[0] for city in cities)
+        print(city_names)
     except MySQLdb.Error as e:
         print("MySQL Error: ", e)
         sys.exit(1)
