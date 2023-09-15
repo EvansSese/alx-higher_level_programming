@@ -28,10 +28,7 @@ def list_states_with_n(username, password, database_name):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
-        print("Wrong format")
-    else:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        database_name = sys.argv[3]
-        list_states_with_n(username, password, database_name)
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database_name = sys.argv[3]
+    list_states_with_n(username, password, database_name)
