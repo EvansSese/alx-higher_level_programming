@@ -16,7 +16,7 @@ def cities_by_state(username, password, database_name):
         cursor = db.cursor()
         query = ("SELECT * FROM cities "
                  "WHERE state_id = ("
-                 "SELECT state_id, name FROM states) "
+                 "SELECT state_id FROM states) "
                  "ORDER BY cities.id ASC")
         cursor.execute(query)
         cities = cursor.fetchall()
