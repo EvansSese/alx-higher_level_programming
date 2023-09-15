@@ -15,7 +15,9 @@ def find_state(username, password, database_name, state_name):
                              db=database_name)
         cursor = db.cursor()
         query = ("SELECT * FROM states "
-                 "WHERE name = '{}' ORDER BY states.id ASC").format(state_name)
+                 "WHERE name = '{}' "
+                 "COLLATE utf8mb4_bin "
+                 "ORDER BY states.id ASC").format(state_name)
         cursor.execute(query)
         states = cursor.fetchall()
         for state in states:
