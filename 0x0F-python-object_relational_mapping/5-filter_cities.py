@@ -19,7 +19,7 @@ def filter_cities(username, password, database_name, state_name):
                  "WHERE state_id = "
                  "(SELECT state_id FROM states "
                  "WHERE name = %s "
-                 "COLLATE utf8mb4_bin LIMIT 1) "
+                 "LIMIT 1) "
                  "ORDER BY cities.id ASC")
         cursor.execute(query, (state_name,))
         cities = cursor.fetchall()
