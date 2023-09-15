@@ -15,11 +15,9 @@ def filter_cities(username, password, database_name, state_name):
                              passwd=password,
                              db=database_name)
         cursor = db.cursor()
-        query = ("SELECT * FROM cities "
-                 "WHERE state_id = "
-                 "(SELECT state_id FROM states "
-                 "WHERE name = %s "
-                 "LIMIT 1) "
+        query = ("SELECT cities.name FROM cities "
+                 "INNER JOIN states ON cities.state_id = state_id "
+                 "WHERE states.name = %s "
                  "ORDER BY cities.id ASC")
         cursor.execute(query, (state_name,))
         cities = cursor.fetchall()
