@@ -16,7 +16,7 @@ def filter_cities(username, password, database_name, state_name):
                              db=database_name)
         cursor = db.cursor()
         query = ("SELECT cities.name FROM cities "
-                 "INNER JOIN states ON cities.state_id = state_id "
+                 "INNER JOIN states ON cities.state_id = states.id "
                  "WHERE states.name = %s "
                  "ORDER BY cities.id ASC")
         cursor.execute(query, (state_name,))
