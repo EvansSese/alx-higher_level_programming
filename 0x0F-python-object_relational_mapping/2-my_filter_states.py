@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+""" Defines function to find state """
 
 import sys
 import MySQLdb
 
 
 def find_state(username, password, database_name, state_name):
+    """ Function to find state """
     try:
         db = MySQLdb.connect(host='localhost',
                              port=3306,

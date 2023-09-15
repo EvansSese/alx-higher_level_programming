@@ -1,10 +1,12 @@
 #!/usr/bin/python3
+""" Defines function to list states with N"""
 
 import sys
 import MySQLdb
 
 
 def list_states_with_n(username, password, database_name):
+    """ Function to list states with N """
     try:
         db = MySQLdb.connect(host='localhost',
                              port=3306,
