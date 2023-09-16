@@ -16,8 +16,11 @@ def list_first_states(username, password, database_name):
     Session = sessionmaker(bind=engine)
     session = Session()
     state = session.query(State).order_by(State.id).first()
-    print(state.id, end=': ')
-    print(state.name)
+    if state is None:
+        print('Nothing')
+    else:
+        print(state.id, end=': ')
+        print(state.name)
     session.close()
 
 
