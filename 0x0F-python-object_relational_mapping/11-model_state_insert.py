@@ -18,7 +18,7 @@ def insert_state(username, password, database_name):
     louisiana = State(name='Louisiana')
     session.add(louisiana)
     state_id = session.query(State.id).filter(State.name == 'Louisiana').first()
-    print(state_id)
+    print(str(state_id))
     session.commit()
     session.close()
 
