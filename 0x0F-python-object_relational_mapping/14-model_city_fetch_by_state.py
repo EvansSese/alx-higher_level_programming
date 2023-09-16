@@ -17,9 +17,9 @@ def get_all_cities(username, password, database_name):
     Session = sessionmaker(bind=engine)
     session = Session()
     rows = (session.query(City, State)
-                     .filter(City.state_id == State.id)
-                     .order_by(City.id)
-                     .all())
+                   .filter(City.state_id == State.id)
+                   .order_by(City.id)
+                   .all())
     for city, state in rows:
         print('{}: ({}) {}'.format(state.name, city.id, city.name))
 
