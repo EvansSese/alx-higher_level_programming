@@ -11,7 +11,7 @@ from sqlalchemy import create_engine
 
 def get_all_cities(username, password, database_name):
     """Gets all cities"""
-    engine = create_engine('mysql+mysqldb//{}:{}@localhost/{}'
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
                            .format(username, password, database_name),
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
