@@ -15,8 +15,7 @@ def get_state(username, password, database_name, state_name):
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    state_id = (session.query(State.id)
-                       .filter(State.name == '{}'.format(state_name)))
+    state_id = session.query(State.id).filter_by(name=state_name)
     if state_id is None:
         print('Not found')
     else:
