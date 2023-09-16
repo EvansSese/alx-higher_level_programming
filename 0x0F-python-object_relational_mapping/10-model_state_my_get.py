@@ -19,7 +19,7 @@ def get_state(username, password, database_name, state_name):
     if state_id is None:
         print('Not found')
     else:
-        print(state_id)
+        print(state_id[0])
     session.close()
 
 
