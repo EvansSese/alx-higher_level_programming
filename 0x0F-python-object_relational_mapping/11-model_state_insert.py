@@ -15,11 +15,12 @@ def insert_state(username, password, database_name):
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    louisiana = State('Louisiana')
+    louisiana = State(name='Louisiana')
     session.add(louisiana)
     session.commit()
     state_id = session.query(State).filter(State.id == 'Louisiana').first()
-    print(state_id)
+    print(str(state_id))
+    session.close()
 
 
 if __name__ == "__main__":
