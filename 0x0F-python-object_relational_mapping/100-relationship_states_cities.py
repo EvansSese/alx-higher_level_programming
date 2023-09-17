@@ -17,8 +17,8 @@ def create_state_and_city(username, password, database_name):
     Session = sessionmaker(bind=engine)
     session = Session()
     california = State(name='California')
-    san_francisco = City(name='San Francisco', state=california)
-    session.add_all([california, san_francisco])
+    california.cities = [City(name='San Francisco')]
+    session.add(california)
     session.commit()
     session.close()
 
