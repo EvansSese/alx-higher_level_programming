@@ -18,7 +18,7 @@ def list_cities_and_states(username, password, database_name):
     session = Session()
     cities = session.query(City).order_by(City.id).all()
     for city in cities:
-        print("{}: {} -> {}".format(city.id, city.name, city.state.id))
+        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
     session.close()
 
 
