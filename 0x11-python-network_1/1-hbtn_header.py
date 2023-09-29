@@ -12,8 +12,6 @@ def display_header(url):
         x_request_id = response.getheader('X-Request-Id')
         if x_request_id:
             print("{}".format(x_request_id))
-        else:
-            print("X-Request-Id header not found in the response.")
 
 
 if __name__ == "__main__":
