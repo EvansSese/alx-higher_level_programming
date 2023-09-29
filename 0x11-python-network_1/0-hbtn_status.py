@@ -12,9 +12,9 @@ if __name__ == "__main__":
         with urllib.request.urlopen(url) as res:
             data = res.read()
             print("Body response:")
-            print("\t - type: {}".format(type(data)))
-            print("\t - content: {}".format(data))
-            print("\t - utf-8 content: {}".format(data.decode('utf-8')))
+            print("    - type: {}".format(type(data)))
+            print("    - content: {}".format(data))
+            print("    - utf-8 content: {}".format(data.decode('utf-8')))
     except urllib.error.URLError as e:
         print(f"Error fetching URL: {e}")
     except Exception as e:
