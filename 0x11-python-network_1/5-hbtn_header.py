@@ -14,8 +14,6 @@ def display_header(url):
         x_request_id = response.headers.get('X-Request-Id')
         if x_request_id:
             print(f"{x_request_id}")
-        else:
-            print("X-Request-Id header not found in the response.")
     except requests.exceptions.RequestException as e:
         print(f"Error fetching URL: {e}")
     except Exception as e:
