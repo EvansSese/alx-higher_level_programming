@@ -14,7 +14,7 @@ if __name__ == "__main__":
             print("Body response:")
             print("    - type: {}".format(type(data)))
             print("    - content: {}".format(data))
-            print("    - utf-8 content: {}".format(data.decode('utf-8')))
+            print("    - utf8 content: {}".format(data.decode('utf-8')))
     except urllib.error.URLError as e:
         print(f"Error fetching URL: {e}")
     except Exception as e:
