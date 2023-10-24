@@ -3,7 +3,7 @@
 const request = require('request');
 
 if (process.argv.length !== 3) {
-  console.log(`Usage: node ${process.argv[0]} <API_URL>`);
+  console.log(`Usage: node completed_tasks.js <API_URL>`);
   process.exit(1);
 }
 
@@ -29,11 +29,10 @@ request(apiUrl, (error, response, body) => {
         }
       });
 
-      for (const userId in completedTasks) {
-        console.log(`${userId}: ${completedTasks[userId]}`);
-      }
+      console.log(completedTasks);
     } catch (parseError) {
       console.error(parseError);
     }
   }
 });
+
