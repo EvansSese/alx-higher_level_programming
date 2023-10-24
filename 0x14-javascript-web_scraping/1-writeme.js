@@ -13,4 +13,5 @@ const content = process.argv[3];
 fs.writeFile(filePath, content, 'utf-8', (error) => {
   if (error) {
     console.error(error);
+  }
 });
