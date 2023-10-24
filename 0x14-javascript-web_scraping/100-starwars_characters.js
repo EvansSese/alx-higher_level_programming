@@ -18,7 +18,6 @@ request(apiUrl, (error, response, body) => {
   } else {
     try {
       const movieData = JSON.parse(body);
-      console.log(`Characters in "${movieData.title}":`);
       movieData.characters.forEach(character => {
         request(character, (characterError, characterResponse, characterBody) => {
           if (characterError) {
