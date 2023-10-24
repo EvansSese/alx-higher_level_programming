@@ -3,7 +3,7 @@
 const request = require('request');
 
 if (process.argv.length !== 3) {
-  console.log('Usage: node ', ${process.argv[0]}, ' <API_URL>');
+  console.log('Usage: node 4-starwars_count.js <API_URL>');
   process.exit(1);
 }
 
