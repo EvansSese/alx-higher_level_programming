@@ -3,7 +3,7 @@
 const request = require('request');
 
 if (process.argv.length !== 3) {
-  console.log(`Usage: node completed_tasks.js <API_URL>`);
+  console.log(`Usage: node ${process.argv[0]} <API_URL>`);
   process.exit(1);
 }
 
