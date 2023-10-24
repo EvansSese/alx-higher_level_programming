@@ -3,7 +3,7 @@
 const request = require('request');
 
 if (process.argv.length !== 3) {
-  console.log('Usage: node ${process.argv[0]} <API_URL>');
+  console.log('Usage: node '${process.argv[0]} '<API_URL>');
   process.exit(1);
 }
 
@@ -20,7 +20,7 @@ request(apiUrl, (error, response, body) => {
       const wedgeAntillesMovies = movieData.results.filter(movie =>
         movie.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')
       );
-      console.log('Number of movies with Wedge Antilles: ${wedgeAntillesMovies.length}');
+      console.log(${wedgeAntillesMovies.length});
     } catch (parseError) {
       console.error(parseError);
     }
